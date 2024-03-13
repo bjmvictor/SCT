@@ -188,6 +188,7 @@ while True:
         minutos_restantes = (tempoRestante % 3600) // 60
         log.info(f'O usuário: {usuario} fez login. Tempo restante: {horas_restantes} horas e {minutos_restantes} minutos.')
         subprocess.run(['msg', usuario, f'Seu tempo de uso é de {horas_restantes} horas e {minutos_restantes} minutos.'])
+        subprocess.run(['java', '-cp', r'C:\Users\Public\Documents\Python\SCT\Timer\Temporizador.jar', 'Temporizador', f'{tempoRestante}'])
         show_alert = False
 
     # Verifica se o tempo de uso esgotou

@@ -58377,3 +58377,7 @@ Usuário indisponivel para controle de tempo. usuario:
 C:\Users\Public\Documents\Python\SCT\Service>call C:\Users\Public\Documents\Python\SCT\Scripts\activate 
 
 (SCT) C:\Users\Public\Documents\Python\SCT\Service>"C:\Users\Public\Documents\Python\SCT\Scripts\python.exe" "C:\Users\Public\Documents\Python\SCT\Service\main.py" 
+
+C:\Users\Public\Documents\Python\SCT\Service>call C:\Users\Public\Documents\Python\SCT\Scripts\activate 
+
+(SCT) C:\Users\Public\Documents\Python\SCT\Service>"C:\Users\Public\Documents\Python\SCT\Scripts\python.exe" "C:\Users\Public\Documents\Python\SCT\Service\main.py" 
