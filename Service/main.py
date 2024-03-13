@@ -81,6 +81,7 @@ def obter_dados():
         return int(linhas[0]), data_atual, int(linhas[2])
 
     except Exception as e:
+        subprocess.run(['msg', usuario, f"Ocorreu um erro ao obter dados: {e}"])
         log.error(f"Arquivo existe mas ocorreu um erro ao obter dados: {e}")
         # Obtem a data atual no formato DD/MM/YYYY
         data_atual = datetime.now().strftime('%Y-%m-%d')
@@ -133,8 +134,10 @@ def alterar_dado(valor, linha):
 
     except FileNotFoundError:
         log.error("Ocorreu um erro ao ler o arquivo principal, arquivo não encontrado.")
+        subprocess.run(['msg', usuario, "Ocorreu um erro ao ler o arquivo principal, arquivo não encontrado."])
     except Exception as e:
         log.error(f"Ocorreu um erro ao atualizar os dados: {e}")
+        subprocess.run(['msg', usuario, f"Ocorreu um erro ao atualizar os dados: {e}"])
 
 # Loop principal
 while True:
@@ -144,7 +147,7 @@ while True:
     # Verifica se o usuário está logado mesmo
     if usuario == 'SISTEMA' or usuario == '' or usuario == None:
         time.sleep(10)
-        print(f"Usuário indisponivel para controle de tempo. usuario: {usuario}")
+        print(f"Usuário indisponível para controle de tempo. Usuário: {usuario}")
         break
 
     # Verifica se outro usuário fez login
@@ -184,7 +187,7 @@ while True:
         horas_restantes = tempoRestante // 3600
         minutos_restantes = (tempoRestante % 3600) // 60
         log.info(f'O usuário: {usuario} fez login. Tempo restante: {horas_restantes} horas e {minutos_restantes} minutos.')
-        #subprocess.run(['msg', usuario, f'Seu tempo de uso é de {horas_restantes} horas e {minutos_restantes} minutos.'])
+        subprocess.run(['msg', usuario, f'Seu tempo de uso é de {horas_restantes} horas e {minutos_restantes} minutos.'])
         show_alert = False
 
     # Verifica se o tempo de uso esgotou
@@ -192,10 +195,13 @@ while True:
         log.info(f'O usuário: {usuario}, chegou ao limite do tempo máximo: {tempoMax // 3600} horas e 15 minutos. Desligando...')
 
         # Desliga o computador
-        subprocess.run(['msg', "*", f'{usuario} Seu tempo acabou, desligando em 10 segundos...'])
-        subprocess.run(['shutdown', '/f', '/s', '/t', '10'] )
+        subprocess.run(['msg', "*", f'{usuario} Seu tempo acabou, desligando...'])
+        subprocess.run(['shutdown', '/f', '/s', '/t', '0'])
         subprocess.run(['net user', f'{usuario}', '/active:no'])
         time.sleep(60)
+
+        # Após o desligamento, sai do loop principal
+        break
     else:
         time.sleep(10)
         # Continua adicionando tempo à sessão do usuário
