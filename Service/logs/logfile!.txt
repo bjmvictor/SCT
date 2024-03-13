@@ -1,0 +1,91 @@
+2024-01-04 21:25:42,555 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 13 minutos.
+2024-01-04 21:31:13,012 - ERROR - Arquivo do usuário não encontrado, criando um novo..
+2024-01-04 21:31:33,031 - ERROR - Arquivo do usuário não encontrado, criando um novo..
+2024-01-04 21:33:15,476 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:19,554 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:22,224 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:24,585 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:28,108 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:30,090 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 6 minutos.
+2024-01-04 21:33:56,985 - INFO - O usuário: bvictor, chegou ao limite do tempo máximo: 11 horas e 15 minutos. Desligando...
+2024-01-05 15:07:36,655 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-05 15:07:36,718 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 15 minutos.
+2024-01-05 15:08:25,199 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:30,030 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:34,279 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:37,010 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:39,980 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:44,077 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:46,506 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:49,331 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 14 minutos.
+2024-01-05 15:08:54,179 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-05 15:08:58,034 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-05 15:09:00,116 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-05 15:09:02,595 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-05 15:09:06,068 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-05 15:09:10,993 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-06 08:56:48,915 - INFO - Atualizando a data no banco do usuário: bvictor
+2024-01-06 08:56:48,924 - INFO - O usuário: bvictor, chegou ao limite do tempo máximo: 10 horas e 15 minutos. Desligando...
+2024-01-06 09:00:19,650 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 15 minutos.
+2024-01-06 10:44:17,946 - INFO - O usuário: bvictor fez login. Tempo restante: 9 horas e 12 minutos.
+2024-01-06 10:46:14,022 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-06 10:46:14,054 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 15 minutos.
+2024-01-06 10:54:59,565 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 13 minutos.
+2024-01-06 11:10:53,157 - ERROR - Arquivo do usuário não encontrado, criando um novo..
+2024-01-06 16:00:07,229 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 58 minutos.
+2024-01-06 16:16:23,755 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 42 minutos.
+2024-01-06 16:27:18,901 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 31 minutos.
+2024-01-06 16:27:32,406 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 31 minutos.
+2024-01-06 16:28:00,298 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 30 minutos.
+2024-01-06 18:59:11,838 - INFO - O usuário: bjvie, chegou ao limite do tempo máximo: 3 horas e 15 minutos. Desligando...
+2024-01-08 11:35:27,229 - INFO - Atualizando a data no banco do usuário: bergson
+2024-01-08 11:35:27,239 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-08 13:50:37,374 - INFO - O usuário: bergson, chegou ao limite do tempo máximo: 2 horas e 15 minutos. Desligando...
+2024-01-08 15:20:51,634 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-08 15:20:51,727 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 15 minutos.
+2024-01-08 15:32:27,413 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 3 minutos.
+2024-01-08 17:58:20,747 - INFO - O usuário: bjvie fez login. Tempo restante: 0 horas e 38 minutos.
+2024-01-08 17:59:11,438 - INFO - O usuário: bjvie fez login. Tempo restante: 0 horas e 38 minutos.
+2024-01-09 15:03:26,338 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-09 15:03:26,353 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 15 minutos.
+2024-01-09 18:19:03,948 - INFO - O usuário: bjvie, chegou ao limite do tempo máximo: 3 horas e 15 minutos. Desligando...
+2024-01-09 20:14:54,497 - INFO - Atualizando a data no banco do usuário: bvictor
+2024-01-09 20:14:54,544 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 15 minutos.
+2024-01-09 20:27:28,279 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 2 minutos.
+2024-01-09 20:28:23,679 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 2 minutos.
+2024-01-09 20:30:03,311 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 0 minutos.
+2024-01-09 20:30:25,116 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 0 minutos.
+2024-01-10 09:12:47,502 - INFO - Atualizando a data no banco do usuário: bergson
+2024-01-10 09:12:47,674 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-10 18:16:59,707 - INFO - O usuário: bergson fez login. Tempo restante: 0 horas e 51 minutos.
+2024-01-10 19:08:55,519 - INFO - O usuário: bergson, chegou ao limite do tempo máximo: 2 horas e 15 minutos. Desligando...
+2024-01-10 19:26:57,685 - INFO - Atualizando a data no banco do usuário: bvictor
+2024-01-10 19:26:57,701 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 15 minutos.
+2024-01-11 09:55:58,607 - INFO - Atualizando a data no banco do usuário: bvictor
+2024-01-11 09:55:58,623 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 15 minutos.
+2024-01-11 09:56:38,712 - INFO - Atualizando a data no banco do usuário: bergson
+2024-01-11 09:56:38,727 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-11 12:12:08,700 - INFO - O usuário: bergson, chegou ao limite do tempo máximo: 2 horas e 15 minutos. Desligando...
+2024-01-11 15:22:18,188 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-11 15:22:18,203 - INFO - O usuário: bjvie fez login. Tempo restante: 3 horas e 15 minutos.
+2024-01-11 17:06:33,990 - ERROR - Ocorreu um erro ao obter dados: invalid literal for int() with base 10: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2024-01-11 17:06:33,990 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-11 17:06:44,146 - ERROR - Ocorreu um erro ao obter dados: invalid literal for int() with base 10: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2024-01-12 10:32:54,161 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-12 10:32:54,208 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-12 10:34:44,811 - INFO - Atualizando a data no banco do usuário: bergson
+2024-01-12 10:34:44,828 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-12 10:55:13,578 - INFO - O usuário: bergson fez login. Tempo restante: 1 horas e 57 minutos.
+2024-01-12 11:17:13,714 - INFO - O usuário: bergson fez login. Tempo restante: 1 horas e 52 minutos.
+2024-01-12 15:24:55,419 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 13 minutos.
+2024-01-12 17:39:29,729 - INFO - O usuário: bjvie, chegou ao limite do tempo máximo: 2 horas e 15 minutos. Desligando...
+2024-01-12 17:41:08,692 - INFO - O usuário: bjvie, chegou ao limite do tempo máximo: 2 horas e 15 minutos. Desligando...
+2024-01-12 19:25:11,221 - ERROR - Arquivo do usuário não encontrado, criando um novo..
+2024-01-12 19:25:11,237 - INFO - O usuário: defaultuser100000 fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-12 19:25:32,265 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 14 minutos.
+2024-01-13 10:53:59,952 - ERROR - Ocorreu um erro ao obter dados: invalid literal for int() with base 10: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2024-01-13 10:53:59,952 - INFO - O usuário: bergson fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-13 10:54:10,129 - ERROR - Ocorreu um erro ao obter dados: invalid literal for int() with base 10: '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+2024-01-13 15:58:50,677 - INFO - Atualizando a data no banco do usuário: bjvie
+2024-01-13 15:58:50,693 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 15 minutos.
+2024-01-13 16:02:55,987 - INFO - O usuário: bjvie fez login. Tempo restante: 2 horas e 11 minutos.
