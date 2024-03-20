@@ -62,8 +62,14 @@ def obter_dados(usuario):
         # Feche a conexão com o banco de dados
         conn.close()
 
-        #Retorna os valores na ordem: Tempo máximo, Data de login, Tempo de uso(atual)
-        return resultados[0][0], resultados[0][1], resultados[0][2], resultados[0][3]
+        # Se o usuário não for encontrado no banco emite um alerta e encerra a aplicação
+        if resultados == []:
+            log.info(f"Usário '{usuario}' não cadastrado para o SCT.")
+            subprocess.run(["msg", "*", f"Usário '{usuario}' não cadastrado para o SCT."])
+            exit
+        else:
+            #Retorna os valores na ordem: Tempo máximo, Data de login, Tempo de uso(atual)
+            return resultados[0][0], resultados[0][1], resultados[0][2], resultados[0][3]
 
     #Salvar log em caso de erros
     except Exception as e:
@@ -161,8 +167,12 @@ while True:
     # Calcula e transforma o tempo extra (minutos para segundos)
     tempoExtra *= 60
 
-    # Obtem os valores do usuário
-    nmUsuario, tempoMax, dtLogin, tempoUso = obter_dados('bvictor')
+    if (obter_dados(usuario)) is not None:
+        # Obtem os valores do usuário
+        nmUsuario, tempoMax, dtLogin, tempoUso = obter_dados(usuario)
+    else:
+        break
+        
 
     # Converte os valores para inteiro (Garante que não aconteça exceções na execução)
     tempoUso = int(tempoUso)

@@ -1,26 +1,9 @@
-2024-03-20 09:55:19,821 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 09:56:12,939 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:03:33,701 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:04:44,619 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:05:18,506 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:05:56,692 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:06:28,536 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:06:34,909 - ERROR - Ocorreu um erro ao obter os dados do usuário: bvictor 
- erro:unable to open database file
-2024-03-20 10:08:54,165 - INFO - O usuário: bvictor fez login. Tempo restante: 10 horas e 13 minutos.
-2024-03-20 10:13:09,054 - ERROR - Ocorreu um erro ao obter os dados do usuário 'benjamin.vieira' 
+2024-03-20 12:53:55,929 - INFO - Usário 'benjamin.vieira' não cadastrado para o SCT.
+2024-03-20 12:56:40,119 - ERROR - Ocorreu um erro ao obter os dados do usuário 'benjamin.vieira' 
  erro:list index out of range
-2024-03-20 10:13:33,221 - ERROR - Ocorreu um erro ao obter os dados do usuário 'benjamin.vieira' 
- erro:list index out of range
-2024-03-20 10:15:05,992 - INFO - O usuário: benjamin.vieira fez login. Tempo restante: 10 horas e 13 minutos.
-2024-03-20 10:18:41,681 - INFO - O usuário: benjamin.vieira fez login. Tempo restante: 10 horas e 13 minutos.
-2024-03-20 10:23:47,185 - ERROR - Ocorreu um erro ao atualizar dados do usuário. Erro: database is locked
-2024-03-20 10:26:22,935 - INFO - O usuário: benjamin.vieira fez login. Tempo restante: 10 horas e 13 minutos.
-2024-03-20 10:27:06,157 - INFO - O usuário: benjamin.vieira fez login. Tempo restante: 10 horas e 13 minutos.
+2024-03-20 12:56:40,252 - INFO - Usuário 'benjamin.vieira' não cadastrado para o SCT.
+2024-03-20 12:58:06,488 - INFO - Usário 'benjamin.vieira' não cadastrado para o SCT.
+2024-03-20 12:58:37,367 - INFO - Usário 'benjamin.vieira' não cadastrado para o SCT.
+2024-03-20 13:00:44,391 - INFO - Usário 'benjamin.vieira' não cadastrado para o SCT.
+2024-03-20 13:15:46,815 - INFO - Atualizando a data no banco do usuário: benjamin.vieira
+2024-03-20 13:15:46,832 - INFO - O usuário: benjamin.vieira fez login. Tempo restante: 10 horas e 15 minutos.
