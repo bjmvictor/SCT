@@ -4,39 +4,59 @@ import win32ts as sys
 import time
 import subprocess
 import socket
-from datetime import datetime
 import pytz
 import sqlite3
+import send_mail as email
 
 # Inicia variáveis para tratamento de login
 last_user = None
 show_alert = False
-tempoExtra = 15                                        # Minutos
-path = r"C:\Users\benjamin.vieira\Documents\Python\SCT\Service"  # Diretório do programa
-database_dir = path + r"/database.db"                   # Nome do banco .db
+tempo_extra = 10                                       # Minutos
+path = r"C:\Users\Public\Documents\Python\SCT\Service"  # Diretório do programa
+database_dir = path + r"\database.db"                   # Nome do banco .db
+email_destino = "bjm.victor@gmail.com"
 
 # Obtem a data da rede utilizando o fuso horário de São Paulo
 def obter_data_global(servidor_de_tempo='time.nist.gov', porta=13, fuso_horario='America/Sao_Paulo'):
-    # Conecta ao servidor de tempo
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((servidor_de_tempo, porta))
-        resposta = s.recv(1024).decode('utf-8')
+    try:
+        # Conecta ao servidor de tempo
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.connect((servidor_de_tempo, porta))
+            resposta = s.recv(1024).decode('utf-8')
 
-    # Extrai o horário do resultado
-    hora_str = resposta.split()[2]
+        # Extrai o horário do resultado
+        hora_str = resposta.split()[2]
 
-    # Obtem a data atual
-    data_atual = datetime.now().date()
+        # Obtem a data atual
+        data_atual = datetime.now().date()
 
-    # Concatenar a hora à data atual para criar um objeto datetime
-    data_hora_str = f"{data_atual} {hora_str}"
-    data_utc = datetime.strptime(data_hora_str, "%Y-%m-%d %H:%M:%S")
+        # Concatenar a hora à data atual para criar um objeto datetime
+        data_hora_str = f"{data_atual} {hora_str}"
+        data_utc = datetime.strptime(data_hora_str, "%Y-%m-%d %H:%M:%S")
 
-    # Adicionar informações do fuso horário
-    fuso = pytz.timezone(fuso_horario)
-    data_global = fuso.localize(data_utc).date()
+        # Adicionar informações do fuso horário
+        fuso = pytz.timezone(fuso_horario)
+        data_global = fuso.localize(data_utc).date()
 
-    return data_global
+        # Formatando a data para DD/MM/YYYY
+        data_formatada = data_global.strftime("%d/%m/%Y")
+
+        return data_formatada
+    except Exception as e:
+        log.error(f"Falha ao obter a data atual da rede: {e}")
+
+# Obtem a data e hora da rede utilizando o fuso horário de São Paulo
+def obter_data_hora():
+    try:
+        # Obtem a data e hora atual da máquina
+        data_hora_atual = datetime.now()
+
+        # Formata a data e hora
+        data_hora_formatada = data_hora_atual.strftime("%d/%m/%Y %H:%M:%S")
+
+        return data_hora_formatada
+    except Exception as e:
+        log.error(f"Falha ao obter a data e hora local: {e}")
 
 # Função para obter o atual usuário logado no sistema
 def get_logged_in_username():
@@ -77,7 +97,7 @@ def obter_dados(usuario):
         subprocess.run(["msg", "*", f"Ocorreu um erro ao obter os dados do usuário '{usuario}' \n ERRO:{e}"])
 
 # Função para alterar dados do usuário no banco
-def alterar_dados(usuario=None, nome=None, data_login=None, tempo_uso=None, tempo_maximo=None):
+def alterar_dados(usuario=None, nome=None, data_login=None, data_hora_login=None, tempo_uso=None, tempo_maximo=None):
     try:
         # Conectar ao banco de dados
         conn = sqlite3.connect(database_dir)
@@ -97,6 +117,9 @@ def alterar_dados(usuario=None, nome=None, data_login=None, tempo_uso=None, temp
             if data_login is not None:
                 sql += "data_login=?, "
                 novos_valores.append(data_login)
+            if data_hora_login is not None:
+                sql += "data_hora_login=?, "
+                novos_valores.append(data_hora_login)
             if tempo_uso is not None:
                 sql += "tempo_uso=?, "
                 novos_valores.append(tempo_uso)
@@ -132,7 +155,7 @@ def registrar_login(usuario, nm_usuario, tempo_restante, dt_login):
 
         # Comando SQL para inserção dos dados
         sql = "INSERT INTO historico_login (login_usuario, nm_usuario, tempo_restante, dt_login) VALUES (?, ?, ?, ?)"
-        
+
         # Executa o comando, inserindo os dados no banco
         cursor.execute(sql, (usuario, nm_usuario, tempo_restante, dt_login))
 
@@ -141,11 +164,11 @@ def registrar_login(usuario, nm_usuario, tempo_restante, dt_login):
 
         # Fecha a conexão com o banco
         conn.close()
-    
+
     # Em caso de erro na execução, registra o erro no log
     except Exception as e:
         log.error(f"Ocorreu uma problema ao registrar o histórico de login do usuário: {nm_usuario}. Erro: {e}")
-        
+
 
 # Loop principal
 while True:
@@ -154,7 +177,7 @@ while True:
 
     # Verifica se o usuário está logado
     if usuario == 'SISTEMA' or usuario == '' or usuario == None:
-        log.log(f"Usuário '{usuario}' indisponível para controle de tempo.")
+        log.info(f"Usuário '{usuario}' indisponível para controle de tempo.")
         print(f"Usuário '{usuario}' indisponível para controle de tempo.")
         time.sleep(10)
         break
@@ -165,27 +188,24 @@ while True:
         last_user = usuario
 
     # Calcula e transforma o tempo extra (minutos para segundos)
-    tempoExtra *= 60
+    tempoExtra = tempo_extra*60
 
     if (obter_dados(usuario)) is not None:
         # Obtem os valores do usuário
         nmUsuario, tempoMax, dtLogin, tempoUso = obter_dados(usuario)
     else:
         break
-        
 
     # Converte os valores para inteiro (Garante que não aconteça exceções na execução)
     tempoUso = int(tempoUso)
     tempoMax = int(tempoMax)
-
-    # Adiciona o tempo extra ao tempo restante
-    tempoMax += tempoExtra
 
     ##\DEBUG
     ##-\print(f"TEMPO RESTANTE: {tempoMax}")
 
     # Obtem a data atual no formato global: YYYY-MM-DD
     data_atual = obter_data_global()
+    data_hora_atual = obter_data_hora()
 
     # Registra log e verifica se a data de login é diferente da data atual
     ## Se a data for diferente o código atualiza a data e o tempo de uso e sai do loop (reiniciando o código)
@@ -194,19 +214,21 @@ while True:
         ##-\print(f"DATA ATUAL: {obter_data_global()}, DATA LOGIN: {obter_data_global()}")
         log.info(f'Atualizando a data no banco do usuário: {usuario}')
         try:
-            alterar_dados(usuario=usuario, data_login=str(data_atual), tempo_uso=0)
+            alterar_dados(usuario=usuario, data_login=str(data_atual), data_hora_login=str(data_hora_atual), tempo_uso=0)
             tempoUso = 0
         except Exception as e:
             log.error(e)
 
     # Verifica se deve exibir a mensagem sobre o tempo
     if show_alert and tempoUso < tempoMax:
+        tempoMax += tempoExtra
         tempoRestante = tempoMax - tempoUso
         horas_restantes = tempoRestante // 3600
         minutos_restantes = (tempoRestante % 3600) // 60
-        registrar_login(usuario, nmUsuario, f"Tempo restante: {horas_restantes} horas e {minutos_restantes} minutos.", str(data_atual))
+        registrar_login(usuario, nmUsuario, f"Tempo restante: {horas_restantes} horas e {minutos_restantes} minutos.", str(data_hora_atual))
         log.info(f'O usuário: {usuario} fez login. Tempo restante: {horas_restantes} horas e {minutos_restantes} minutos.')
         subprocess.run(['msg', '*',  f'Seu tempo de uso é de {horas_restantes} horas e {minutos_restantes} minutos.'])
+        email.send_email(email_destino, f"O usuário {usuario} ({nmUsuario}) fez login.\nData e Hora: {data_hora_atual}\nTempo restante: {horas_restantes} horas e {minutos_restantes} minutos.\n\nSCT - Sistema de Controle de Tempo.\nDesenvolvido por Benjamin Victor - 2024", assunto=f"SCT - Login de {usuario}")
         show_alert = False
 
     # Verifica se o tempo de uso esgotou
@@ -216,10 +238,10 @@ while True:
         # Desliga o computador
         subprocess.run(['msg', '*', f'Seu tempo acabou, desligando...'])
         subprocess.run(['shutdown', '/f', '/s', '/t', '0'])
-        time.sleep(60)
+        time.sleep(10)
 
         # Após executar o desligamento, sai do loop principal
-        break
+        #break
     else:
         if (tempoUso+15) >= tempoMax:
             subprocess.run(['msg', '*', f'Desligando em 15 segundos.'])
